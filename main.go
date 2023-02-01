@@ -48,7 +48,7 @@ func PredictByMode(units []Unit, num int) []int {
 		blueCount[i].id = i + 1
 	}
 
-	for i := 0; i < num; i++ {
+	for i := len(units) - 1; i >= len(units)-num; i-- {
 		u := units[i]
 		for i := 0; i < 6; i++ {
 			redCount[u.nums[i]-1].count++
