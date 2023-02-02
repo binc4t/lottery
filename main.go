@@ -2,9 +2,7 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"regexp"
 	"sort"
@@ -113,10 +111,5 @@ func GetLotteryData(num int) ([]Unit, error) {
 }
 
 func main() {
-	data, err := GetLotteryData(30)
-	if err != nil {
-		log.Fatal(err)
-	}
-	ret := PredictByMode(data, 10)
-	fmt.Println(ret)
+	cmd()
 }
