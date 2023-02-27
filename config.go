@@ -27,6 +27,10 @@ func InitConfig() {
 		log.Fatal(err)
 	}
 
+	if Config.WebHookURL == "" {
+		log.Fatal("no web_hook_url provided")
+	}
+
 	if Config.PredictNum == 0 {
 		Config.PredictNum = 30
 	}
