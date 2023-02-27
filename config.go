@@ -26,4 +26,11 @@ func InitConfig() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	if Config.PredictNum == 0 {
+		Config.PredictNum = 30
+	}
+	if len(Config.DaysOfWeek) == 0 {
+		Config.DaysOfWeek = []time.Weekday{time.Tuesday, time.Thursday, time.Sunday}
+	}
 }

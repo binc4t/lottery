@@ -27,7 +27,6 @@ func Cycle() {
 	for {
 		select {
 		case now := <-ticker.C:
-			// check if today is Tuesday, Thursday, or Sunday and the current time is 18:00
 			for day := range Config.DaysOfWeek {
 				if int(now.Weekday()) == day {
 					if now.Hour() == 18 && now.Minute() == 0 && now.Second() == 0 {
