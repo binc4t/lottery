@@ -77,15 +77,6 @@ var notifyCmd = &cobra.Command{
 	Use:  "notify",
 	Args: cobra.ArbitraryArgs,
 	Run: func(cmd *cobra.Command, args []string) {
-		data, err := GetLotteryData(100)
-		if err != nil {
-			log.Fatal(err)
-		}
-		ret := PredictByMode(data, Config.PredictNum)
-		retStr := strconv.Itoa(ret[0])
-		for i := 1; i < len(ret); i++ {
-			retStr = retStr + " " + strconv.Itoa(ret[i])
-		}
-		NotifyLark(Config.WebHookURL, "今日财富密码", retStr)
+		CalAndNotify()
 	},
 }
