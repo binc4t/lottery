@@ -2,5 +2,5 @@ package main
 
 func main() {
 	InitConfig()
-	cmd()
+	CMD()
 }

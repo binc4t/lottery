@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func cmd() {
+func CMD() {
 	rootCmd.AddCommand(dataCmd)
 	rootCmd.AddCommand(daemonCmd)
 	rootCmd.AddCommand(notifyCmd)
