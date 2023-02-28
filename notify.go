@@ -66,4 +66,5 @@ func getHourMinuteFromTime(t string) (hour, minute int) {
 			log.Fatal(err)
 		}
 	}
+	return
 }
