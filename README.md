@@ -17,7 +17,7 @@
 
 ，此模式需要`config.json`配置,  其中`web_hook_url`是飞书机器人的WebHookURL, 详见[飞书文档](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)
 
-```json
+```jsonc
 {
   "web_hook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxx",
   "predict_nums": 30, // 结果预测基于最近 30 次的开奖结果
