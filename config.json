@@ -1,5 +1,5 @@
 {
-  "web_hook_url": "",
-  "day_of_week": [],
+  "web_hook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxxxx",
+  "day_of_week": [2, 4, 0],
   "predict_nums": 30
 }

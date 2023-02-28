@@ -28,7 +28,7 @@ func InitConfig() {
 	}
 
 	if Config.WebHookURL == "" {
-		log.Fatal("no web_hook_url provided")
+		log.Fatal("please provide lark webHookURL")
 	}
 
 	if Config.PredictNum == 0 {

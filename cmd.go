@@ -65,9 +65,6 @@ var daemonCmd = &cobra.Command{
 	Use:  "daemon",
 	Args: cobra.ArbitraryArgs,
 	Run: func(cmd *cobra.Command, args []string) {
-		if len(args) != 1 {
-			log.Fatal("please provide lark webHookURL")
-		}
 		go Cycle()
 		<-make(chan interface{})
 	},
