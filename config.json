@@ -1,0 +1,6 @@
+{
+  "web_hook_url": "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxx",
+  "day_of_week": [2, 4, 0],
+  "predict_nums": 30,
+  "time": "18:00"
+}

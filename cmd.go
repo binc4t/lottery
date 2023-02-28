@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"log"
 	"strconv"
-
-	"github.com/spf13/cobra"
 )
 
-func cmd() {
+func CMD() {
 	rootCmd.AddCommand(dataCmd)
+	rootCmd.AddCommand(daemonCmd)
+	rootCmd.AddCommand(notifyCmd)
 	rootCmd.Execute()
 }
 
@@ -57,5 +58,24 @@ var dataCmd = &cobra.Command{
 		for _, v := range data {
 			fmt.Printf("%v: %v\n", v.id, v.nums)
 		}
+	},
+}
+
+var daemonCmd = &cobra.Command{
+	Use:  "daemon",
+	Args: cobra.ArbitraryArgs,
+	Run: func(cmd *cobra.Command, args []string) {
+		InitConfig()
+		go Cycle()
+		<-make(chan interface{})
+	},
+}
+
+var notifyCmd = &cobra.Command{
+	Use:  "notify",
+	Args: cobra.ArbitraryArgs,
+	Run: func(cmd *cobra.Command, args []string) {
+		InitConfig()
+		CalAndNotify()
 	},
 }
