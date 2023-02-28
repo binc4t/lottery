@@ -56,15 +56,18 @@ func Cycle() {
 func getHourMinuteFromTime(t string) (hour, minute int) {
 	seps := strings.Split(t, ":")
 	var err error
+
 	if len(seps) != 2 {
-		hour, err = strconv.Atoi(seps[0])
-		if err != nil {
-			log.Fatal(err)
-		}
-		minute, err = strconv.Atoi(seps[0])
-		if err != nil {
-			log.Fatal(err)
-		}
+		log.Fatal("time format wrong")
+	}
+
+	hour, err = strconv.Atoi(seps[0])
+	if err != nil {
+		log.Fatal(err)
+	}
+	minute, err = strconv.Atoi(seps[1])
+	if err != nil {
+		log.Fatal(err)
 	}
 	return
 }
