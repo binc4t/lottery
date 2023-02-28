@@ -11,8 +11,9 @@ var Config LotteryConfig
 
 type LotteryConfig struct {
 	WebHookURL string         `json:"web_hook_url"` // Lark Robot WebHookURL, see https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN
-	DaysOfWeek []time.Weekday `json:"days_of_week"` // notify on every these days of week, default: {time.Tuesday, time.Thursday, time.Sunday}
 	PredictNum int            `json:"predict_num"`  // Predict by recent predict_num's lottery results, default: 30
+	DaysOfWeek []time.Weekday `json:"days_of_week"` // notify on every these days of week, default: {time.Tuesday, time.Thursday, time.Sunday}
+	Time       string         `json:"time"`
 }
 
 func InitConfig() {
@@ -36,5 +37,8 @@ func InitConfig() {
 	}
 	if len(Config.DaysOfWeek) == 0 {
 		Config.DaysOfWeek = []time.Weekday{time.Tuesday, time.Thursday, time.Sunday}
+	}
+	if Config.Time == "" {
+		Config.Time = "18:00"
 	}
 }

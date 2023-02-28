@@ -6,6 +6,7 @@ import (
 	"github.com/nikoksr/notify/service/lark"
 	"log"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -37,16 +38,32 @@ func CalAndNotify() {
 
 func Cycle() {
 	ticker := time.NewTicker(time.Second)
+	h, m := getHourMinuteFromTime(Config.Time)
 	for {
 		select {
 		case now := <-ticker.C:
 			for day := range Config.DaysOfWeek {
 				if int(now.Weekday()) == day {
-					if now.Hour() == 18 && now.Minute() == 0 && now.Second() == 0 {
+					if now.Hour() == h && now.Minute() == m && now.Second() == 0 {
 						CalAndNotify()
 					}
 				}
 			}
+		}
+	}
+}
+
+func getHourMinuteFromTime(t string) (hour, minute int) {
+	seps := strings.Split(t, ":")
+	var err error
+	if len(seps) != 2 {
+		hour, err = strconv.Atoi(seps[0])
+		if err != nil {
+			log.Fatal(err)
+		}
+		minute, err = strconv.Atoi(seps[0])
+		if err != nil {
+			log.Fatal(err)
 		}
 	}
 }

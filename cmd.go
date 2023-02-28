@@ -65,6 +65,7 @@ var daemonCmd = &cobra.Command{
 	Use:  "daemon",
 	Args: cobra.ArbitraryArgs,
 	Run: func(cmd *cobra.Command, args []string) {
+		InitConfig()
 		go Cycle()
 		<-make(chan interface{})
 	},
@@ -74,6 +75,7 @@ var notifyCmd = &cobra.Command{
 	Use:  "notify",
 	Args: cobra.ArbitraryArgs,
 	Run: func(cmd *cobra.Command, args []string) {
+		InitConfig()
 		CalAndNotify()
 	},
 }
