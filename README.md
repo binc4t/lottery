@@ -15,7 +15,7 @@
 
 `lottery daemon`
 
-，此模式需要`config.json`配置,  其中`web_hook_url`是飞书机器人的WebHookURL, 详见[飞书文档](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)
+此模式需要`config.json`配置,  其中`web_hook_url`是飞书机器人的WebHookURL, 详见[飞书文档](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)
 
 ```jsonc
 {
